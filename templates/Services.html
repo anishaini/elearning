@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--<div class="row services py-4 bg-light">
+          <p class="text-center fs-3">our<b class=" text-mycolor1">services</b></p>
+                <div class="col-sm-10 mx-auto">
+                  <div class="row py-2">
+                  <div class="col-sm-3">
+                  
+                  </div>
+                  </div>
+  {% load static %}
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    body.dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .service-card {
+      perspective: 1000px;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .service-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      backface-visibility: hidden;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+    .card-front {
+      z-index: 2;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background: #f1f1f1;
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      color: #6a1b9a;
+    }
+    .stars {
+      color: #fbc02d;
+    }
+    .filter-btn {
+      border-radius: 20px;
+      margin: 5px;
+    }
+  </style>
+
+<!-- Dark Mode Toggle -->
+<div class="theme-toggle">
+  <button class="btn btn-dark" onclick="toggleTheme()">🌙</button>
+</div>
+
+<div class="container py-5">
+  <h2 class="text-center fw-bold mb-4 text-primary">Our Services</h2>
+  <p class="text-center text-muted mb-4">Explore powerful learning features designed for you.</p>
+
+  <!-- Category Filter -->
+  <div class="text-center mb-5">
+    <button class="btn btn-outline-primary filter-btn" onclick="filterCards('all')">All</button>
+    <button class="btn btn-outline-primary filter-btn" onclick="filterCards('live')">Live</button>
+    <button class="btn btn-outline-primary filter-btn" onclick="filterCards('ai')">AI</button>
+    <button class="btn btn-outline-primary filter-btn" onclick="filterCards('cert')">Certificates</button>
+  </div>
+
+  <div class="row g-4" id="serviceContainer">
+    <!-- SERVICE CARD TEMPLATE START -->
+    <div class="col-md-4 service-card" data-category="live">
+      <div class="card-inner">
+        <div class="card-front text-center">
+          <i class="fas fa-chalkboard-teacher service-icon" data-bs-toggle="tooltip" title="Live Expert Teaching"></i>
+          <h5 class="mt-3">Live Classes</h5>
+          <p>Attend real-time online classes by industry experts with Q&A sessions.</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="card-back text-center">
+          <p>Interactive Zoom integration with doubt solving support.</p>
+          <a href="#" class="btn btn-sm btn-primary mt-3">Join Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 service-card" data-category="ai">
+      <div class="card-inner">
+        <div class="card-front text-center">
+          <i class="fas fa-brain service-icon" data-bs-toggle="tooltip" title="Smart Learning Suggestions"></i>
+          <h5 class="mt-3">AI Recommendations</h5>
+          <p>Get custom course suggestions using AI to match your goals.</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <div class="card-back text-center">
+          <p>Adaptive content based on your progress & interest.</p>
+          <a href="#" class="btn btn-sm btn-primary mt-3">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 service-card" data-category="cert">
+      <div class="card-inner">
+        <div class="card-front text-center">
+          <i class="fas fa-certificate service-icon" data-bs-toggle="tooltip" title="Official Recognition"></i>
+          <h5 class="mt-3">Certification</h5>
+          <p>Earn certificates for course completion and achievements.</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="card-back text-center">
+          <p>Download and verify certificates with unique QR codes.</p>
+          <a href="#" class="btn btn-sm btn-primary mt-3">Get Certified</a>
+        </div>
+      </div>
+    </div>
+    <!-- More cards can be added similarly -->
+  </div>
+</div>
+
+<script>
+  // Dark Mode Toggle
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  // Filter Cards
+  function filterCards(category) {
+    let cards = document.querySelectorAll('.service-card');
+    cards.forEach(card => {
+      const show = (category === 'all' || card.dataset.category === category);
+      card.style.display = show ? 'block' : 'none';
+    });
+  }
+
+  // Enable Tooltips
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  tooltipTriggerList.map(t => new bootstrap.Tooltip(t))
+
+  // ScrollReveal Animations
+  ScrollReveal().reveal('.service-card', {
+    delay: 100,
+    duration: 1000,
+    distance: '50px',
+    easing: 'ease-in-out',
+    origin: 'bottom',
+    interval: 100
+  });
+</script>
+
+
+{% endblock %}

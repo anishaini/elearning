@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!-- slider start -->
+        <div class="row slider">
+         <div class="col-sm-10 mx-auto">
+          <div class="row">
+            <div class="col-sm-8 pt-5">
+              <div class="fs-2 text-center text-light text-uppercase mt-5">Welcome to Tech <b class="text-mycolor1">Hub 
+                <i class="fa-solid fa-graduation-cap"></i></b> </div>
+                <div class="text-center text-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt repellat quos saepe autem, illo maiores. Numquam, porro! Sint quaerat inventore ad libero nulla. Possimus velit ullam earum rem fugit ratione!</div>
+                <a href="/register/" class="btn bg-mycolor1 text-light mx-auto d-block w-25 mt-5 rounded-pill">Register Now</a>
+            </div>
+            <div class="col-sm-4 login my-5 p-5">
+              <span class="position-absolute top-0 start-50 translate-middle bg-mycolor1
+               py-2 px-3 text-light rounded-pill fs-4 border border-2 border-light "> Contact us</span>
+              <form method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control txt" required placeholder="Name" name="name">
+                <input type="email" class="form-control txt" required placeholder="Email" name="email">
+                <input type="number" class="form-control txt" required placeholder="Mobile" name="mob">
+                <textarea class="form-control ta" required placeholder="Message" name="msg"></textarea>
+                <input type="submit"  value="Save" class="form-control bg-mycolor1 btn1" >
+              </form>
+            </div>
+          </div>
+         </div>
+        </div>
+        <!-- slider end -->
+  {% endblock %}

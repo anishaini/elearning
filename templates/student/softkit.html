@@ -1,0 +1,45 @@
+{% extends 'studentbase.html'%}
+{% load static %}
+{% block content %}
+{% if not request.session.email %}
+<script>
+    alert("You Have To Login First");location.href="/login/"
+</script>
+{% endif %}
+<div class="row heading">
+  <div class="text-center fs-3">Software<b class="text-mycolor1">KIT<i class="fa-solid fa-microchip"></i></b>
+  <hr class="w-25 mx-auto">
+  Download Important Notes
+  </div>
+</div>
+
+<div class="row mx-auto">
+  <div class="col-sm-10 shadow-lg p-2 mx-auto">
+    <div class="row">
+      {% for r in sdata %}
+      <!--start notes card-->
+      <div class="col-sm-6">
+        <div class="card mb-3 border-0 shadow-lg my-2">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{r.thumbnail}}" class="img-fluid p-4"/>
+    </div>
+    <div class="col-md-8 mx-auto">
+      <div class="card-body mx-auto">
+        <h5 class="card-title">{{r.title}}</h5>
+        
+        <p class="card-text">{{r.Softinfo}}</p>
+        <p class="card-text"><small class="text-body-secondary"><i class="fa-solid fa-calendar"></i> poated date : {{r.posteddate}}</small>
+        <span class="btn float-end bg-mycolor1 m-3"><a class="text-light" href="/{{r.downloadlink}}" style="text-decoration: none !important;"><i class="fa-solid fa-download"></i>Downlod</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <!--end notes card-->
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

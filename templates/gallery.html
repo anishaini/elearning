@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <!--start gallery-->
+        <div class="row gallery bg-light">
+          <p class="text-center fs-3">our
+          <b class=" text-mycolor1">gallery</b>
+          </p>
+          <div class="col-sm-10 mx-auto py-3">
+            <div class="row">
+              <!--star gallery-->
+              {% for x in gal %}
+              <div class="col-sm-3">
+                <div class="card shadow-lg"
+                >
+                  <img src="../{{x.picture}}" class="card-img-top"/>
+                  <p class="py-2 text-center fw-bold">{{x.title}}</p>
+                </div>
+              </div>
+              {% endfor %}
+              <!--end gallery-->
+            </div>
+          </div>
+        </div>
+        <!-- end gallery-->
+{% endblock %}

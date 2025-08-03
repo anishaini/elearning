@@ -1,0 +1,46 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+{% block content %}
+{% if not request.session.email%}
+<script>
+  alert("login first");location.herf="/login/"
+</script>
+{% endif %}
+  
+<div class="row heading">
+  <div class="text-center fs-3">E-<b class="text-mycolor1">Notes<i class="fa-solid fa-key"></i></b>
+  <hr class="w-25 mx-auto">
+  Download Important Notes
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10 shadow-lg p-3 ps-4 mx-auto">
+    <div class="row">
+      {% for r in notes%}
+      <!--start notes card-->
+      <div class="col-sm-6">
+        <div class="card mb-3 border-0 shadow-lg my-2">
+  <div class="row g-0 ">
+    <div class="col-md-3  ">
+      <img src="{% static 'images/pdf.png' %}" class="img-fluid ms-2  "style="height:150px;width:120px;"/>
+    </div>
+    <div class="col-md-9  ">
+      <div class="card-body">
+        <h5 class="card-title">{{r.title}}</h5>
+        
+        <p class="card-text">{{r.notesinfo}}</p>
+        <p class="card-text"><small class="text-body-secondary"><i class="fa-solid fa-calendar"></i> {{r.posted_date}}</small>
+        <span class="btn float-end bg-mycolor1 text-light"><i class="fa-solid fa-download"></i><a style="text-decoration: none; color:white;" href="/{{r.notesfile}}">Download</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <!--end notes card-->
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

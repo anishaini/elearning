@@ -1,0 +1,151 @@
+{% extends 'studentbase.html'%}
+{% load static %}
+{% if not request.session.email %}
+<script>
+    alert("You Have To Login First");location.href="/login/"
+</script>
+{% endif %}
+
+{% block content %}
+<style>
+  .dashboardic{
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    font-size: 25px;
+    line-height:40px
+   
+  }
+  .dashdiv{
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding: 10;
+  }
+  #dashboard a{
+    text-decoration: none;
+  }
+  .dashboardcard:hover{
+    transform: scale(1.1);
+    transition: 2s;
+  }
+  .dashboardcard{
+    transition: 2s;
+  }
+</style>
+<!--dashboard start -->
+ 
+
+<!-- Font Awesome CDN -->
+
+
+<!-- Custom Styles -->
+<style>
+  .dashboard-card {
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(to top, #ffffff, #f0f0f0);
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: linear-gradient(to top, #6f42c1, #c471ed);
+    color: white;
+  }
+
+  .dashboard-card i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #6f42c1;
+    transition: color 0.3s;
+  }
+
+  .dashboard-card:hover i {
+    color: white;
+  }
+
+  .card-label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .dashboard-card {
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<div class="container">
+  <h3 class="text-center my-5">welcome <span style="color: #6f42c1;"><b>{{request.session.name}}</span></h3>
+  <div class="row g-4 justify-content-center">
+
+    <!-- Card 1 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-user-circle"></i>
+        <div class="card-label"><a herf="/profile/">Profile</a></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-video"></i>
+        <div class="card-label">Lectures</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-tasks"></i>
+        <div class="card-label">Tasks</div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-file"></i>
+        <div class="card-label">Certificates</div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-comments"></i>
+        <div class="card-label">Chat</div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-cogs"></i>
+        <div class="card-label">Settings</div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-lightbulb"></i>
+        <div class="card-label">AI Suggestion</div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="col-6 col-md-3">
+      <div class="dashboard-card">
+        <i class="fas fa-sign-out-alt"></i>
+        <div class="card-label">Logout</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

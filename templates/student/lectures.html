@@ -1,0 +1,46 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block content %}
+{% if not request.session.email %}
+<script>
+    alert("You Have To Login First");location.href="/login/"
+</script>
+{% endif %}
+<div class="row heading my-2">
+    <div class="text-center fs-3">Video<b>Lecture<i class="fa-solid fa-layer-group"></i></b> 
+         <hr class="w-25 mx-auto">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quae repellat
+    </div> 
+</div>
+<!--heading end-->
+<div class="row">
+    <div class="col-sm-11 mx-auto shadow-lg my-3">
+        <div class="row">
+            {% for r in vdo %}
+            <div class="col-sm-6 mx-auto">
+                 <!--start lecture cart-->
+        <div class="card mb-3 border-0 shadow-lg my-2">
+  <div class="row g-0">
+    <div class="col-md-4">
+     <iframe class="img-thumbnail" src="{{r.vlink}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{r.title}}</h5>
+        <p class="card-text">{{r.video_info}}</p>
+        <p class="card-text"><small class="text-body-secondary"><i class="fa-solid fa-calendar "></i> <b>Poste Date:</b> {{r.posted_date}}</small>
+        <span class="badge text-light float-end bg-mycolor2 "> {{r.category}}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+        <!--end lecture cart-->
+            </div>
+            {%  endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

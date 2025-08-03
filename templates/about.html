@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load static %}
+<style>
+    .hero {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      margin:0;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: ;
+      margin-bottom:px;
+    }
+    .highlight {
+      color: #2a5298;
+      font-weight: bold;
+    }
+    .icon {
+      font-size: 30px;
+      color: #2a5298;
+    }
+  </style>
+
+  <!-- Hero Section -->
+  <div class="row">
+    <div class="col-sm-12 hero container ">
+      <h1 class="display-4 fw-bold">About <span class="text-warning">SkillNova</span></h1>
+      <div class="row p-5">
+      <p class="lead mt-3">Empowering Learners with Modern Skills for a Better Tomorrow</p>
+    <p>Our mission is to bridge the gap between traditional education and future-ready skills through technology, creativity, and passion. We believe learning should be flexible, interactive, and personal — and that's exactly what we aim to deliver.
+
+<p>Driven by a team of educators, developers, and designers, SkillNova is more than just a platform — it's a learning experience built to inspire growth, curiosity, and confidence.</p></p>
+    </div>
+    </div>
+    </div>
+
+
+
+  <!-- About Section -->
+  <section class="py-5 ">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Who We Are</h2>
+          <p class="text-muted">SkillNova is an e-learning platform built with the vision to bring quality education to your fingertips. From coding to competitive exams, we offer interactive and updated content to help every student grow.</p>
+        </div>
+      </div>
+
+      <div class="row text-center mb-5">
+        <div class="col-md-4">
+          <i class="fas fa-bullseye icon mb-3"></i>
+          <h5 class="fw-bold">Our Mission</h5>
+          <p>To make learning easy, accessible, and affordable for everyone, everywhere.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-eye icon mb-3"></i>
+          <h5 class="fw-bold">Our Vision</h5>
+          <p>To build a future where every learner is empowered with the skills they need to succeed.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-users icon mb-3"></i>
+          <h5 class="fw-bold">Our Learners</h5>
+          <p>From students to working professionals, we serve thousands of learners across India.</p>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="row text-center">
+        <h2 class="section-title mb-4">Why Choose <span class="highlight">SkillNova</span>?</h2>
+        <div class="col-md-3 mt-5">
+          <i class="fas fa-video icon mb-2"></i>
+          <h6>Video Lessons</h6>
+          <p class="text-muted">High-quality recorded + live lectures by experts.</p>
+        </div>
+        <div class="col-md-3 mt-5">
+          <i class="fas fa-code icon mb-2"></i>
+          <h6>Real Projects</h6>
+          <p class="text-muted">Practical learning through hands-on assignments.</p>
+        </div>
+        <div class="col-md-3 mt-5">
+          <i class="fas fa-certificate icon mb-2"></i>
+          <h6>Certification</h6>
+          <p class="text-muted">Get certified for every skill you learn.</p>
+        </div>
+        <div class="col-md-3 mt-5">
+          <i class="fas fa-globe icon mb-2"></i>
+          <h6>Anytime, Anywhere</h6>
+          <p class="text-muted">Learn at your own pace with 24x7 access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Prompt -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h4>Want to collaborate or have questions?</h4>
+      <p>We're here to help you learn better. Contact us anytime.</p>
+      <a href="/contact/" class="btn btn-primary mt-2">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 SkillNova. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+{% endblock %}

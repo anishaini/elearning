@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        }
+        .bg-mycolor2{
+            background: #880E4F;
+        }
+        .bg-mycolor1{
+            background:#4A148C;
+        }
+        .text-mycolor2{
+            color:#880E4F;
+        }
+        .text-mycolor1{
+            color:#4A148C;
+        }
+        .ic{
+            color:purple;
+            height:28px;
+            width:28px;
+            text-align:center;
+            line-height:28px;
+            border: none;
+            transition:3s;
+        }
+        .ic:hover{
+            transform:translateY(-5px);
+            transition:1s;
+            background:#880E4F;
+            color:white;
+            
+        }
+        .header{
+          height:100px;
+        }
+        #menu{
+          background: transparent !important;
+          
+        }
+        .lists{
+          font-size: 15px;
+        }
+        #menu ul li a{
+          color: white !important;
+        }
+        .slider{
+          min-height: 300px;
+          background-color: lightgrey;
+        }
+        .aboutcontant{
+          font-size: 18px;
+        }
+        .im{
+          height: 150px;
+        }
+        .imgpic{
+          height: 300px;
+          width: 100%;
+          transition: 2s;
+        }
+        .imgpic:hover{
+          transform: scale(1.4);
+          transition: 2s;
+        }
+        .footer{
+          background: black;
+          color: white;
+          text-align: center;
+          line-height: 50px;
+          min-height: 50px;
+        }
+
+       .txt{
+          height:50px;
+          margin-bottom:4%;
+          border:none !important;
+          border-bottom:4px solid white !important;
+          background:transparent !important;
+          color: white !important;
+       
+        }
+        .ta{
+          height:80px;
+          margin-bottom:4%;
+          background:transparent !important;
+          border:none !important;
+          border-bottom:4px solid white !important;
+          outline: none !important;
+        }
+       ::placeholder{
+          color:white !important;
+        }
+        .btn1{
+          height:50px;
+
+        }
+        .login{
+          background:rgba(0,0,0,.3);
+          backdrop-filter:blur(5px);
+        }
+        #verticalmenu ul li{
+          list-style-type: none;
+          padding-left: 10px;
+          margin-bottom: 10px;
+        }
+        #verticalmenu ul li a{
+          text-decoration: none;
+          font-size: 20px;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="container-fluid">
+      <!--start header-->
+        <div class="row header">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="row mt-2">
+                    <div class="col-sm-3 mt-3">
+                        <div class="fs-2">
+                          SKILL <b class="" style="color:purple;">NOVA  <i class="fa-solid fa-graduation-cap"></i></b>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <i class="fa-solid fa-envelope ic"></i>
+                        <b>Mail <b class="text-mycolor1">us</b></b></b><br>
+                        anishshaini294@gmail.com
+                    </div>
+                    <div class="col-sm-2 mt-3">
+                        <i class="fa-solid fa-phone ic"></i>
+                        <b>Call <b class="text-mycolor1">us</b></b><br>
+                        8764567988
+                    </div>
+                    <div class="col-sm-2 pt-3 mt-3"> 
+                        <i class="fa-brands fa-square-facebook ic"></i>
+                        <i class="fa-brands fa-square-twitter ic"></i>
+                        <i class="fa-brands fa-square-youtube ic"></i>
+                        <i class="fa-brands fa-linkedin ic"></i>
+                        <i class="fa-brands fa-instagram ic"></i>
+                        <i class="fa-brands fa-twitter ic"></i>
+                    </div>
+                    <div class="col-sm-2 d-flex ">
+                    {% if request.session.email %}
+                    <img src="../../{{ request.session.userpic }}" style="max-height: 65px; width:65px; border-radius:50%;" class="img-thumbnail mx-auto ms-3 mt-2 d-block me-2">
+                    <div class="d-flex flex-column">
+                    <p class="mb-0 fw-bold mt-3 ml-2"><b>{{request.session.name}}</b></p>
+                    <small class="text-black">{{request.session.email}}</small>
+                    <!--batch id dikhane ke liye-->
+                    <small class="text-black">{{request.session.batch.batch_name}}</small>
+                    </div>
+                    {% endif %}
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <!-- end header -->
+        <!-- start menu -->
+       <div class="row menu shadow-lg mb-3" style="background:purple;">
+           <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+              <div class="container-fluid ">
+                <button class="navbar-toggler  border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon "></span>
+                </button>
+                    <div class="collapse navbar-collapse justify-content-center lists" id="navbarSupportedContent">
+                          <ul class="navbar-nav mb-2 mb-lg-0 ">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="/student/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/student/lectures/"><i class="fa-solid fa-video"></i> video lectures</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/student/lecturecat/"><i class="fa-solid fa-list"></i> lecture category</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/student/enotes/"><i class="fa-solid fa-clipboard"></i> Download Notes</a>
+                            </li>
+                            <li>
+                              <a class="nav-link" href="/student/mytask/"><i class="fa-solid fa-video"></i> Our Task</a>
+                            </li>
+                             <li class="nav-item">
+                              <a class="nav-link" href="/student/softkit/"><i class="fa-solid fa-microchip"></i> software kit</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/student/profile/"><i class="fa-solid fa-user"></i> MY Profile</a>
+                            </li>
+                             <li class="nav-item">
+                              <a class="nav-link" href="/student/signout/"><i class="fa-solid fa-power-off"></i> Sign out</a>
+                            </li>
+                            
+                            
+                          </ul>
+                    </div>
+              </div>
+           </nav>
+        {% comment %} </div>
+        <!-- end menu -->
+        <!--vertical menu start-->
+        <div class="row bg-mycolor1">
+          <div class="col-sm-12">
+            <a class="btn text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  <i class="fa-solid fa-bars"></i>
+</a>
+<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Button with data-bs-target
+</button> -->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-mycolor2 text-light"id="verticalmenu">
+    <ul>
+      <li>
+        <a herf="/student/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a>
+      </li>
+            <li>
+        <a herf="/student/lecturecat/"><i class="fa-solid fa-list"></i> lecture category</a>
+      </li>
+            <li>
+        <a herf="/student/category/"><i class="fa-solid fa-video"></i> lecture vedio</a>
+      </li>
+            <li>
+        <a herf="/student/enotes/"><i class="fa-solid fa-clipboard"></i> Enotes</a>
+      </li>
+            <li>
+        <a herf="/student/softkit/"><i class="fa-solid fa-microchip"></i> software kit</a>
+      </li>
+            <li>
+        <a herf="/student/profile/"><i class="fa-solid fa-user"></i> MY Profile</a>
+      </li>
+    </ul>
+   
+  </div>
+</div>
+          </div>
+        </div> {% endcomment %}
+        <!--vertical menu end-->
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" style="min-height:550px;">
+          {% block content %}
+          {% endblock %}
+        </div>
+        </div>
+        
+<div class="row footer">
+  <div class="col-sm-6">
+    &copy; Techpile Technology Private Limited
+  </div>
+  <div class="col-sm-6">
+    Designed and Developed by : Er Anish shaini
+  </div>
+</div>  
+<script src="{% static 'js/bootstrap.bundle.js' %}">
+   </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <style>
+        .bg-mycolor2{
+            background: #880E4F;
+        }
+        .bg-mycolor1{
+            background:#4A148C;
+        }
+        .text-mycolor2{
+            color:#880E4F;
+        }
+        .text-mycolor1{
+            color:#4A148C;
+        }
+        .ic{
+            color:#4A148C;
+            height:28px;
+            width:28px;
+            text-align:center;
+            line-height:28px;
+           
+            transition:3s;
+        }
+        .ic:hover{
+            transform:scale(1.03);
+            transition:1s;
+            background:#880E4F;
+            color:white;
+        }
+        #menu{
+          background: transparent !important;
+          
+        }
+        .lists{
+          font-size: 15px;
+        }
+        #menu ul li a{
+          color: white !important;
+        }
+        .slider{
+          min-height: 300px;
+          background-color: lightgrey;
+        }
+        .aboutcontant{
+          font-size: 18px;
+        }
+        .im{
+          height: 150px;
+        }
+        .imgpic{
+          height: 300px;
+          width: 100%;
+          transition: 2s;
+        }
+        .imgpic:hover{
+          transform: scale(1.4);
+          transition: 2s;
+        }
+        .ufooter{
+          min-height: 250px;
+          background: lightgrey;
+        }
+        .bfooter{
+          min-height: 50px;
+          background: black;
+        }
+        .imgteam{
+          height: 300px;
+        }
+        .imgabout{
+          height: 650px;
+        }
+        .me{
+          margin: 0;
+          padding: 0;
+        }
+        .catic{
+          height: 60px;
+          width: 60px;
+          font-size: 30px;
+          border: 1px solid black;
+          border-radius: 7px;
+          line-height: 60px;
+          transition: 2s;
+        }
+        .catic:hover{
+          background: red;
+          color: white;
+          transition: 2s;
+        }
+        .catimg{
+          height: 200px;
+          
+        }
+        .popularcat:hover
+        {
+          transform:scale(1.09);
+          transition:1s;
+        }
+        .slider{
+          min-height:450px;
+          background:linear-gradient( 45deg, rgba(0,0,0,.3), rgba(0,0,87,.9)),url("{% static 'images/b.jpg'%}");
+          background-size:cover;
+          background-attachment: fixed;
+        }
+        .txt{
+          height:50px;
+          margin-bottom:4%;
+          border:none !important;
+          border-bottom:4px solid white !important;
+          background:transparent !important;
+          color: white !important;
+       
+        }
+        .ta{
+          height:80px;
+          margin-bottom:4%;
+          background:transparent !important;
+          border:none !important;
+          border-bottom:4px solid white !important;
+          outline: none !important;
+          color: white !important;
+        }
+        ::placeholder{
+          color:white !important;
+        }
+        .btn1{
+          height:50px;
+          color: white;
+          font-size:20px;
+
+        }
+        .login{
+          background:rgba(0,0,0,.3);
+          backdrop-filter:blur(5px);
+        }
+        
+    </style>
+   
+</head>
+<body>
+    <div class="container-fluid">
+      <!--start header-->
+        <div class="row header">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="fs-2 ">
+                          SKILL <b class="text-mycolor1">NOVA  <i class="fa-solid fa-graduation-cap"></i></b>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-envelope ic"></i>
+                        <b>Mail <b class="text-mycolor1">us</b></b></b><br>
+                        
+                        <p>novaskill@gmail.com</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-phone ic"></i>
+                        <b>Call <b class="text-mycolor1">us</b></b><br>
+                        8764567988
+                    </div>
+                    <div class="col-sm-3 pt-3"> 
+                        <i class="fa-brands fa-square-facebook ic"></i>
+                        <i class="fa-brands fa-square-twitter ic"></i>
+                        <i class="fa-brands fa-square-youtube ic"></i>
+                        <i class="fa-brands fa-linkedin ic"></i>
+                        <i class="fa-brands fa-instagram ic"></i>
+                    </div>
+                  <div class="col-sm-2 d-flex mt-2">
+                  
+            </div>
+                </div>
+            </div>
+           
+        </div>
+        <!-- end header -->
+        <!-- start menu -->
+        <div class="row menu bg-mycolor1 ">
+           <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+              <div class="container-fluid ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse justify-content-center lists" id="navbarSupportedContent">
+                          <ul class="navbar-nav mb-2 mb-lg-0 ">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="/index/"><i class="fa-solid fa-house"></i> Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/about/"><i class="fa-solid fa-address-card"></i> About us</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                              <a class="nav-link" href="/services/"><i class="fa-solid fa-gears"></i> Courses</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                              <a class="nav-link" href="/gallery/"><i class="fa-solid fa-book"></i> gallery</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/team/"> <i class="fa-solid fa-user-plus"></i> team</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                              <a class="nav-link" href="/contact/"><i class="fa-solid fa-address-book"></i> Contact us</a>
+                            </li>
+                             <li class="nav-item">
+                              <a class="nav-link" href="/register/"><i class="fa-solid fa-address-card"></i> Register</a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="/login/" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i> login</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link"><i class="fa-solid fa-comment"></i> Students Feedback</a>
+                          </ul>
+                    </div>
+              </div>
+           </nav>
+        </div>
+        <!-- end menu -->
+        <div class="row">
+          <div class="col-sm-12 mx-auto" style="min-height: 500px">
+         {% block content %}
+         
+         {% endblock %}
+         </div>
+        </div>
+        
+        <div class="row ufooter">
+          <div class="col-sm-12 mx-auto">
+            <div class="row p-4">
+              <div class="col-sm-3 ps-3">
+                <h5 class="text-center">
+                  About website
+                </h5>
+                <p style="font-size:12px;">
+                  🧾 About SkillNova
+SkillNova is a modern e-learning platform created to make quality education accessible, engaging, and effective for everyone. Whether you're a student preparing for exams, a professional looking to upskill, or simply a curious mind, SkillNova provides tools and resources tailored to your learning journey.
+
+
+                </p>
+                
+                <a herf="https://maps.app.goo.gl/RkxAEAnbXtVgJfrN8">map</a>
+              </div>
+              
+<div class="col-sm-3 ps-5">
+  <p><a href="/index/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Home</a></p>
+  <p><a href="/about/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> About us</a></p>
+  <p><a href="/team/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Our team</a></p>
+  <p><a href="/services/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Our services</a></p>
+  <p><a href="/contact/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Contact us</a></p>
+</div>
+            <div class="col-sm-3 ps-5">
+  <p><a href="/index/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Home</a></p>
+  <p><a href="/about/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> About us</a></p>
+  <p><a href="/team/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Our team</a></p>
+  <p><a href="/services/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Our services</a></p>
+  <p><a href="/contact/" style="color: black; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> Contact us</a></p>
+</div>
+              <div class="col-sm-3">
+                <h5>Get in touch</h5>
+                <i class="fa-solid fa-location-dot">
+                  
+                </i> location
+                  <p>sec. 5 vikash Nagar, Tedhi Pulia,Ring road, lucknow 226022
+                  </p>
+                <i class="fa-solid fa-phone">
+                    +917007237006
+                </i>
+                <i class="fa-brands fa-square-instagram">
+                  
+                </i>
+                <i class="fa-brands fa-square-youtube">
+                  
+                </i>
+                <i class="fa-brands fa-square-twitter">
+                  
+                </i>
+                <i class="fa-brands fa-square-facebook">
+                  
+                </i>
+                <i class="fa-brands fa-linkedin">
+                  
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bfooter text-light text-center " style="line-height:50px;">
+          <span>Developed by Anish shaini &copy;</span><a herf="https://www.techpile.in" target="black"> Techpile</a>
+        </div>
+
+
+
+
+    </div>
+    
+     <script src="{% static 'js/bootstrap.bundle.js' %}">
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+{% extends 'studentbase.html'%}
+{% load static %}
+{% block content %}
+{% if not request.session.email %}
+<script>
+    alert("You Have To Login First");location.href="/login/"
+</script>
+{% endif %}
+<style>
+  {% comment %} .profileimg{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background: #f3f3f3;
+    border: 1px solid black;
+  }
+  .username{
+    margin-top:85px;
+  } 
+  <!--chatgpt
+    .dashboard-card {
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      background: white;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0d6efd;
+    }
+    .section-title {
+      font-weight: bold;
+      color: #0d6efd;
+    }
+    .edit-btn {
+      float: right;
+    }
+    .info-label {
+      font-weight: 500;
+    }
+  -->{% endcomment %}
+    .profile-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 1200px;
+      min-height: 600px;
+      margin: 50px auto;
+      transition: 3s;
+    }
+    .profile-card:hover {
+      transform: scale(1.09);
+      transition:3s;
+    }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid black;
+    }
+    .section-title {
+      font-weight: bold;
+      color: #0d6efd;
+      margin-bottom: 15px;
+    }
+    .info-label {
+      font-weight: 600;
+      color: #333;
+    }
+    .card-tools .btn {
+      min-width: 130px;
+      height: 50px;
+      margin:10px;
+      line-height: 33px;
+    }
+    .edit-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .animated-header {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #0d6efd;
+      margin-bottom: 30px;
+
+    }
+</style>
+<!--
+<div class="row heading">
+  <div class="text-center fs-3">My<b class="text-mycolor1">Profile <i class="fa-solid fa-key"></i></b>
+  <hr class="w-25 mx-auto">
+  gkdkhdkgsjgzjgdkgkxk
+  </div>
+</div>
+end heading
+<div class="row">
+  <div class="col-sm-8 mx-auto bg-light shadow-lg p-5 my-4">
+    <div class="card mb-3 border-0 p-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/b.jpg'%}" class="img-fluid rounded-start " alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class=" " style="fon-family: monotype cursiva;,font-size: 60px">Anish shaini</h5>
+        <p class="card-text">
+          <b>M9bile : </b> <br>
+          <b>Email : </b><br>
+          <b>Address :</b><br>
+          <b>Batch :</b>
+        </p>
+        <p class="card-text"><small class="text-body-secondary"><B>Regisration Date: 23-03-2025</B></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>-->
+<!--<div class="row py-2">
+  <p class="fs-3 text-center">User <b class="text-mycolor1"><i class="fa-solid fa-user"></i> Profile</b></p>
+  <div class="col-md-10 mx-auto">
+    <div class="row py-3">
+      <div class="col-sm-8 mx-auto">
+        <div class="card position-relativ shadow-lg rounded-3 mt-5 mb-5 pb-3 border border-0" style="height:500px;">
+        <img src="{% static 'images/a.jpg'%}" class="img-fluid profileimg position-absolute top-0 start-50 translate-middle"/>
+        <h3 class="text-center username">Anish<b class="text-mycolor1"> Shaini</b></h3>
+        <p class="text-center m-0">anishshaini5@gmail.com</p>
+        <p class="text-center mt-2">
+          <i class="fa-brands fa-square-facebook ic"></i>
+                        <i class="fa-brands fa-square-twitter ic"></i>
+                        <i class="fa-brands fa-square-youtube ic"></i>
+                        <i class="fa-brands fa-linkedin ic"></i>
+                        <i class="fa-brands fa-instagram ic"></i>
+        </p>
+        <div class="row ps-5 g-0">
+            <div class="col-md-2 ps-4">
+              <i class="fa-solid fa-phone"></i> Mob No:
+            </div>
+            <div class="col-md-10 ps-5">
+              +91**********
+            </div>
+            <div class="col-md-2 ps-4"><i class="fa-solid fa-phone"></i> Branch :</div>
+            <div class="col-md-10 ps-5">
+              cs
+            </div>
+            <div class="col-md-2 ps-4"><i class="fa-solid fa-phone"></i> Email :</div>
+            <div class="col-md-10 ps-5">
+              cs
+            </div>
+            <div class="col-md-2 ps-4"><i class="fa-solid fa-phone"></i> :</div>
+            <div class="col-md-10 ps-5">
+              cs
+            </div>
+        <div class="text-center"><a class="btn bg-mycolor1 mt-4 text-light">Edit Profile</a></div>
+        </div>
+        </div>
+        </div>
+    
+
+        </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!--<div class="container mt-5">
+  <div class="dashboard-card">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center">
+        <img src="../../{{ request.session.userpic }}" class="profile-img" alt="Profile Picture">
+      </div>
+      <div class="col-md-9">
+        <h4 class="fw-bold mb-0">{{ request.session.name }}</h4>
+        <p class="text-muted">{{ request.session.email }}</p>
+        <a href="/student/update-profile/" class="btn btn-sm btn-outline-primary edit-btn">Edit Profile</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <h5 class="section-title">Student Information</h5>
+    <div class="row mt-3">
+      <div class="col-md-6 mb-2">
+        <span class="info-label">Phone:</span> +91 9876543210
+      </div>
+      <div class="col-md-6 mb-2">
+        <span class="info-label">Enrollment No:</span> STU123456
+      </div>
+      <div class="col-md-6 mb-2">
+        <span class="info-label">Course:</span> B.Tech (CSE)
+      </div>
+      <div class="col-md-6 mb-2">
+        <span class="info-label">Semester:</span> 5th
+      </div>
+      <div class="col-md-6 mb-2">
+        <span class="info-label">Date of Birth:</span> 15-Aug-2003
+      </div>
+      <div class="col-md-6 mb-2">
+        <span class="info-label">Address:</span> Lucknow, Uttar Pradesh
+      </div>
+    </div>
+
+    <hr>
+
+    <h5 class="section-title">Academic Tools</h5>
+    <div class="row g-3 mt-2">
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-success w-100">My Courses</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-info w-100">Assignments</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-warning w-100">Attendance</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-danger w-100">Results</a>
+      </div>
+    </div>
+
+  </div>
+</div>-->
+
+
+{% for r in userinfo %}
+<div class="container">
+  <div class="animated-header">Student Profile Dashboard</div>
+  <div class="profile-card position-relative">
+    <a href="/student/update-profile/" class="btn btn-outline-primary btn-sm edit-btn"><i class="fas fa-edit"></i> Edit Profile</a>
+
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="../../{{ request.session.userpic }}" class="profile-img" alt="Profile Picture">
+        <h4 class="fw-bold mt-3">{{ request.session.name }}</h4>
+        <p class="text-muted">{{ request.session.email }}</p>
+      </div>
+      <div class="col-md-8">
+        <h5 class="section-title">Personal & Academic Info</h5>
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <span class="info-label">Phone:</span> {{ r.mobile}}
+          </div>
+          <div class="col-sm-6 mb-2">
+            <span class="info-label">Branch</span> {{ r.batch }}
+          </div>
+          <div class="col-sm-6 mb-2">
+            <span class="info-label">Course:</span> B.Tech (CSE)
+          </div>
+          <div class="col-sm-6 mb-2">
+            <span class="info-label">Semester:</span> 5th
+          </div>
+          <div class="col-sm-6 mb-2">
+            <span class="info-label">DOB:</span> 15-Aug-2003
+          </div>
+          <div class="col-sm-6 mb-2">
+            <span class="info-label">Address:</span> Lucknow, UP
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h5 class="section-title text-center">Student Tools</h5>
+    <div class="row g-3 card-tools text-center my-4">
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-success"><i class="fas fa-book"></i> Courses</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-info"><i class="fas fa-file-alt"></i> Assignments</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-warning"><i class="fas fa-calendar-check"></i> Attendance</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-danger"><i class="fas fa-chart-bar"></i> Results</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-dark"><i class="fas fa-comments"></i> Feedback</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-secondary"><i class="fas fa-clock"></i> Time Table</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-primary"><i class="fas fa-user-graduate"></i> Faculty</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="btn btn-outline-secondary"><i class="fas fa-bell"></i> Notifications</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
